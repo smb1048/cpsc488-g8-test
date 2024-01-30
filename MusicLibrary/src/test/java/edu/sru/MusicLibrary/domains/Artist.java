@@ -1,4 +1,4 @@
-package edu.sru.ajr1028.domains;
+package edu.sru.MusicLibrary.domains;
 
 import java.util.Set;
 
