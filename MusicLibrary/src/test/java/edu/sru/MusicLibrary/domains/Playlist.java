@@ -3,26 +3,25 @@ package edu.sru.MusicLibrary.domains;
 import java.util.HashSet;
 import java.util.Set;
 
+import org.springframework.data.annotation.Id;
+
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
 
 public class Playlist {
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
+
 	private String playlistName;
 	private Integer playlistRating;
 	private String dateAdded;
-	
+
 	@ManyToMany
-	@JoinTable(name="playlist_category",
-		joinColumns=@JoinColumn(name="playlist_id"),
-		inverseJoinColumns=@JoinColumn(name="music_id"))
+	@JoinTable(name = "playlist_category", joinColumns = @JoinColumn(name = "playlist_id"), inverseJoinColumns = @JoinColumn(name = "music_id"))
 	private Set<Music> musicName = new HashSet<>();
 
 	public String getPlaylistName() {
@@ -48,7 +47,7 @@ public class Playlist {
 	public void setDateAdded(String dateAdded) {
 		this.dateAdded = dateAdded;
 	}
-	
+
 	public Long getId() {
 		return id;
 	}

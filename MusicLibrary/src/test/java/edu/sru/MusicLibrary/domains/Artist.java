@@ -2,23 +2,24 @@ package edu.sru.MusicLibrary.domains;
 
 import java.util.Set;
 
+import org.springframework.data.annotation.Id;
+
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
 
 public class Artist {
 	@Id
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	
-	@OneToMany(cascade=CascadeType.ALL, mappedBy="artist")
+
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "artist")
 	private Set<Music> allMusic;
-	
-	@OneToMany(cascade=CascadeType.ALL, mappedBy="artist")
+
+	@OneToMany(cascade = CascadeType.ALL, mappedBy = "artist")
 	private Set<Music> albums;
-	
+
 	public Long getId() {
 		return id;
 	}
