@@ -2,11 +2,12 @@ package edu.sru.MusicLibrary.domain.billing;
 
 import java.math.BigDecimal;
 
-import org.springframework.data.annotation.Id;
 import org.springframework.lang.NonNull;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
 
 
 /**
@@ -15,26 +16,26 @@ import jakarta.persistence.Entity;
  */
 @Entity
 public class StateDetails {
-	@Id
-	private String stateName;
+    @Id
+    private String stateName;
 
-	@NonNull
-	@Column(precision = 10, scale = 2, columnDefinition="DECIMAL(10, 2)")
-	private BigDecimal salesTaxRate;
+    @NonNull
+    @Column(precision = 10, scale = 2, columnDefinition="DECIMAL(10, 2)")
+    private BigDecimal salesTaxRate;
 
-	public String getStateName() {
-		return stateName;
-	}
+    public String getStateName() {
+        return stateName;
+    }
 
-	public void setStateName(String stateName) {
-		this.stateName = stateName;
-	}
+    public void setStateName(String stateName) {
+        this.stateName = stateName;
+    }
 
-	public BigDecimal getSalesTaxRate() {
-		return salesTaxRate;
-	}
+    public BigDecimal getSalesTaxRate() {
+        return salesTaxRate;
+    }
 
-	public void setSalesTaxRate(BigDecimal salesTaxRate) {
-		this.salesTaxRate = salesTaxRate;
-	}
+    public void setSalesTaxRate(BigDecimal salesTaxRate) {
+        this.salesTaxRate = salesTaxRate;
+    }
 }
