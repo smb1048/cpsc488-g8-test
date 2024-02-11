@@ -8,7 +8,6 @@
 <style>
 body {
 	width: 100%;
-	overflow: hidden;
 	background: radial-gradient(circle at 10% 20%, #a756ee7a, transparent),
 		radial-gradient(circle at 80% 70%, #36bdee94, transparent),
 		radial-gradient(circle at 92% 85%, #a647ce92, transparent),
@@ -138,59 +137,72 @@ button:hover {
 	background-color: #3A62A2;
 }
 
-.signup-section {
-	margin-top: 20px;
+.title {
 	text-align: center;
+	color: white;
+	margin-top: 40px;
+	font-size: 65px;
 }
 
-.signup-link {
-	margin-left: 5px;
-	color: #4A72B2;
-	text-decoration: none;
+#playlists {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 }
 
-.signup-link:hover {
-	text-decoration: underline;
+.playlist-row {
+	background: white;
+	border-radius: 8px;
+	margin-bottom: 1em;
+	display: flex;
+	align-items: center;
+	padding: 1em;
+	box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.608);
+	width: 72%;
+	margin-top: 35px;
 }
 
-.sign-up-container {
-	width: 500px;
-	margin: 0 auto;
-	padding: 20px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-	background-color: #fff;
-	border-radius: 5px;
-	text-align: center;
+.playlist-image {
+	width: 80px;
+	height: 80px;
+	background-color: #C4B5FD;
+	border-radius: 8px;
+	margin-right: 1em;
 }
 
-.input-group {
-	margin-bottom: 15px;
+.playlist-info h2 {
+	color: #5E548E;
+	margin-bottom: 0.5em;
+	text-align: left;
 }
 
-.input-group label {
-	display: block;
-	margin-bottom: 5px;
+.playlist-info p {
+	color: #6D6875;
+	text-align: left;
 }
 
-.input-group input {
-	width: 80%;
-	padding: 10px;
-	border: 1px solid #ccc;
-	border-radius: 5px;
-}
-
-button {
-	width: 60%;
-	padding: 10px;
-	background-color: #4c68d7;
-	color: #fff;
+.playlist-actions button {
 	border: none;
-	border-radius: 5px;
+	background: #5E548E;
+	color: black;
+	padding: 0.5em 1em;
+	border-radius: 8px;
+	margin-left: 0.5em;
 	cursor: pointer;
 }
 
-button:hover {
-	background-color: #365ab5;
+@media ( max-width : 768px) {
+	.playlist-row {
+		flex-direction: column;
+	}
+	.playlist-actions {
+		width: 100%;
+		padding-top: 1em;
+	}
+	.playlist-actions button {
+		width: 100%;
+		margin-bottom: 0.5em;
+	}
 }
 </style>
 </head>
@@ -212,35 +224,74 @@ button:hover {
 			<button type="submit">Search</button>
 		</div>
 	</nav>
-	<br>
-	<div class="sign-up-container">
-		<h2>Signup</h2>
-		<form>
-			<div class="input-group">
-				<label for="name">Full Name:</label> <input type="text" id="name"
-					name="fullName">
+	<div class="title">Playlists</div>
+	<section id="playlists">
+		<div class="playlist-row">
+			<div class="playlist-image"></div>
+			<div class="playlist-info">
+				<h2>Playlist Name</h2>
+				<p>Playlist Description</p>
 			</div>
-			<div class="input-group">
-				<label for="email">Email:</label> <input type="email" id="email"
-					name="email">
+		</div>
+		<div class="playlist-row">
+			<div class="playlist-image"></div>
+			<div class="playlist-info">
+				<h2>Playlist Name</h2>
+				<p>Playlist Description</p>
 			</div>
-			<div class="input-group">
-				<label for="password">Password:</label> <input type="password"
-					id="password" name="password">
+		</div>
+		<div class="playlist-row">
+			<div class="playlist-image"></div>
+			<div class="playlist-info">
+				<h2>Playlist Name</h2>
+				<p>Playlist Description</p>
 			</div>
-			<div class="input-group">
-				<label for="confirm-password">Confirm Password:</label> <input
-					type="password" id="confirm-password" name="confirmPassword">
+		</div>
+		<div class="playlist-row">
+			<div class="playlist-image"></div>
+			<div class="playlist-info">
+				<h2>Playlist Name</h2>
+				<p>Playlist Description</p>
 			</div>
-			<button type="submit">Signup</button>
-			<p>
-				Already have an account? <a href="/login">Login</a>
-			</p>
-		</form>
-	</div>
-	<br>
+		</div>
+		<div class="playlist-row">
+			<div class="playlist-image"></div>
+			<div class="playlist-info">
+				<h2>Playlist Name</h2>
+				<p>Playlist Description</p>
+			</div>
+		</div>
+		<div class="playlist-row">
+			<div class="playlist-image"></div>
+			<div class="playlist-info">
+				<h2>Playlist Name</h2>
+				<p>Playlist Description</p>
+			</div>
+		</div>
+		<div class="playlist-row">
+			<div class="playlist-image"></div>
+			<div class="playlist-info">
+				<h2>Playlist Name</h2>
+				<p>Playlist Description</p>
+			</div>
+		</div>
+		<div class="playlist-row">
+			<div class="playlist-image"></div>
+			<div class="playlist-info">
+				<h2>Playlist Name</h2>
+				<p>Playlist Description</p>
+			</div>
+		</div>
+		<div class="playlist-row">
+			<div class="playlist-image"></div>
+			<div class="playlist-info">
+				<h2>Playlist Name</h2>
+				<p>Playlist Description</p>
+			</div>
+		</div>
+	</section>
 </body>
-<footer> footer here </footer>
-
+<footer>
+	<p>footer here</p>
+</footer>
 </html>
-

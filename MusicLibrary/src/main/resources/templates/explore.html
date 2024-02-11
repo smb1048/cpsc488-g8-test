@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Music Library</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<style>
+body {
+	width: 100%;
+	background: radial-gradient(circle at 10% 20%, #a756ee7a, transparent),
+		radial-gradient(circle at 80% 70%, #36bdee94, transparent),
+		radial-gradient(circle at 92% 85%, #a647ce92, transparent),
+		radial-gradient(circle at 10% 20%, #15fbef77, transparent),
+		radial-gradient(circle at 40% 70%, #e8439389, transparent);
+}
+
+nav {
+	background: radial-gradient(circle at 10% 20%, #a756ee7a, transparent),
+		radial-gradient(circle at 80% 70%, #36bdee94, transparent),
+		radial-gradient(circle at 92% 85%, #a647ce92, transparent),
+		radial-gradient(circle at 10% 20%, #15fbef77, transparent),
+		radial-gradient(circle at 40% 70%, #e8439389, transparent);
+	color: white;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 10px 20px;
+	box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.15);
+	height: 50px;
+}
+
+nav ul {
+	display: flex;
+	padding: 0;
+	list-style-type: none;
+	margin: 0;
+	align-items: center;
+}
+
+nav ul li {
+	margin-right: 20px;
+}
+
+nav ul li a {
+	color: white;
+	text-decoration: none;
+	padding: 5px 10px;
+	border-radius: 5px;
+	background-color: #ffffff20;
+	transition: background-color 0.3s;
+	box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.075);
+}
+
+nav ul li a:hover {
+	background-color: #f5f5f561;
+}
+
+.search-bar {
+	display: flex;
+	align-items: center;
+	margin: 0;
+}
+
+.search-bar input[type="text"] {
+	padding: 5px;
+	border: none;
+	border-radius: 5px;
+	margin-right: 10px;
+}
+
+.search-bar button {
+	padding: 5px 10px;
+	border: none;
+	border-radius: 5px;
+	background-color: #ffffff20;
+	color: white;
+	cursor: pointer;
+	transition: background-color 0.3s;
+	margin: 0;
+	height: 35px
+}
+
+.search-bar button:hover {
+	background-color: #f5f5f561;
+}
+
+.login-container {
+	background-color: #ffffff;
+	margin: 100px auto 30px;
+	padding: 20px;
+	border-radius: 5px;
+	box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.608);
+	max-width: 600px;
+	text-align: center;
+	align-content: center;
+}
+
+h2 {
+	text-align: center;
+	margin-bottom: 30px;
+	color: #000000;
+}
+
+.input-group {
+	margin-bottom: 20px;
+}
+
+label {
+	display: block;
+	margin-bottom: 8px;
+	color: #4A72B2;
+}
+
+input {
+	width: 80%;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	font-size: 16px;
+}
+
+button {
+	background-color: #4A72B2;
+	color: #ffffff;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	display: block;
+	width: 45%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+button:hover {
+	background-color: #3A62A2;
+}
+
+.explore {
+	padding: 20px;
+}
+
+.genre header {
+	padding-left: 10px;
+}
+
+.genre header h2 {
+	font-size: 2em;
+	color: #fff;
+}
+
+.albums {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 20px;
+}
+
+.album-card {
+	width: calc(25% - 20px);
+	border-radius: 5px;
+	overflow: hidden;
+	box-shadow: 0px 4px 8px rgba(255, 255, 255, 0.608);
+	background: #fff;
+	text-align: center;
+}
+
+.album-art {
+	padding: 10px;
+	background: #f0f0f0;
+}
+
+.album-art img {
+	width: 100%; 
+	height: auto;
+	aspect-ratio: 1/1; 
+	object-fit: cover;
+}
+
+.album-info {
+	padding: 10px;
+}
+
+.album-info h3 {
+	font-size: 1.5em;
+	margin-bottom: 5px;
+	color: #333;
+}
+
+.album-info p {
+	font-size: 1em;
+	color: #666;
+}
+
+@media ( max-width : 768px) {
+	.album-card {
+		width: calc(50% - 20px);
+	}
+}
+
+@media ( max-width : 480px) {
+	.album-card {
+		width: calc(100% - 20px); 
+	}
+}
+</style>
+</head>
+
+<body>
+
+	<nav>
+		<div>
+			<ul>
+				<li><a href="/">Home</a></li>
+				<li><a href="/account">Account</a></li>
+				<li><a href="/playlists">Playlists</a></li>
+				<li><a href="/explore">Explore</a></li>
+				<li><a href="/login">Login</a></li>
+			</ul>
+		</div>
+		<div class="search-bar">
+			<input type="text" placeholder="Search..." name="search">
+			<button type="submit">Search</button>
+		</div>
+	</nav>
+	<div class="explore">
+		<section class="genre">
+			<header>
+				<h2>Rock</h2>
+			</header>
+			<div class="albums">
+				<div class="album-card">
+					<img src="placeholder-rock.jpg" alt="Rock Album Art">
+					<div class="album-info">
+						<h3>Album Title</h3>
+						<p>Artist Name</p>
+					</div>
+				</div>
+					<div class="album-card">
+					<img src="placeholder-rock.jpg" alt="Rock Album Art">
+					<div class="album-info">
+						<h3>Album Title</h3>
+						<p>Artist Name</p>
+					</div>
+				</div>
+					<div class="album-card">
+					<img src="placeholder-rock.jpg" alt="Rock Album Art">
+					<div class="album-info">
+						<h3>Album Title</h3>
+						<p>Artist Name</p>
+					</div>
+				</div>
+					<div class="album-card">
+					<img src="placeholder-rock.jpg" alt="Rock Album Art">
+					<div class="album-info">
+						<h3>Album Title</h3>
+						<p>Artist Name</p>
+					</div>
+				</div>
+					<div class="album-card">
+					<img src="placeholder-rock.jpg" alt="Rock Album Art">
+					<div class="album-info">
+						<h3>Album Title</h3>
+						<p>Artist Name</p>
+					</div>
+				
+			</div>
+		</section>
+
+		<section class="genre">
+			<header>
+				<h2>Rap</h2>
+			</header>
+			<div class="albums">
+				<div class="album-card">
+					<img src="placeholder-rap.jpg" alt="Rap Album Art">
+					<div class="album-info">
+						<h3>Album Title</h3>
+						<p>Artist Name</p>
+					</div>
+				</div>
+					<div class="album-card">
+					<img src="placeholder-rap.jpg" alt="Rap Album Art">
+					<div class="album-info">
+						<h3>Album Title</h3>
+						<p>Artist Name</p>
+					</div>
+				</div>
+					<div class="album-card">
+					<img src="placeholder-rap.jpg" alt="Rap Album Art">
+					<div class="album-info">
+						<h3>Album Title</h3>
+						<p>Artist Name</p>
+					</div>
+				</div>
+					<div class="album-card">
+					<img src="placeholder-rap.jpg" alt="Rap Album Art">
+					<div class="album-info">
+						<h3>Album Title</h3>
+						<p>Artist Name</p>
+					</div>
+				</div>
+					<div class="album-card">
+					<img src="placeholder-rap.jpg" alt="Rap Album Art">
+					<div class="album-info">
+						<h3>Album Title</h3>
+						<p>Artist Name</p>
+					</div>
+				</div>
+			
+			</div>
+		</section>
+
+		<section class="genre">
+			<header>
+				<h2>R&B</h2>
+			</header>
+			<div class="albums">
+				<div class="album-card">
+					<img src="placeholder-rnb.jpg" alt="R&B Album Art">
+					<div class="album-info">
+						<h3>Album Title</h3>
+						<p>Artist Name</p>
+					</div>
+				</div>
+					<div class="album-card">
+					<img src="placeholder-rnb.jpg" alt="R&B Album Art">
+					<div class="album-info">
+						<h3>Album Title</h3>
+						<p>Artist Name</p>
+					</div>
+				</div>
+					<div class="album-card">
+					<img src="placeholder-rnb.jpg" alt="R&B Album Art">
+					<div class="album-info">
+						<h3>Album Title</h3>
+						<p>Artist Name</p>
+					</div>
+				</div>
+					<div class="album-card">
+					<img src="placeholder-rnb.jpg" alt="R&B Album Art">
+					<div class="album-info">
+						<h3>Album Title</h3>
+						<p>Artist Name</p>
+					</div>
+				</div>
+					<div class="album-card">
+					<img src="placeholder-rnb.jpg" alt="R&B Album Art">
+					<div class="album-info">
+						<h3>Album Title</h3>
+						<p>Artist Name</p>
+					</div>
+				</div>
+					<div class="album-card">
+					<img src="placeholder-rnb.jpg" alt="R&B Album Art">
+					<div class="album-info">
+						<h3>Album Title</h3>
+						<p>Artist Name</p>
+					</div>
+				</div>
+			
+			</div>
+		</section>
+
+		<section class="genre">
+			<header>
+				<h2>Country</h2>
+			</header>
+			<div class="albums">
+				<div class="album-card">
+					<img src="placeholder-country.jpg" alt="Country Album Art">
+					<div class="album-info">
+						<h3>Album Title</h3>
+						<p>Artist Name</p>
+					</div>
+				</div>
+				<div class="album-card">
+					<img src="placeholder-country.jpg" alt="Country Album Art">
+					<div class="album-info">
+						<h3>Album Title</h3>
+						<p>Artist Name</p>
+					</div>
+				</div>
+				<div class="album-card">
+					<img src="placeholder-country.jpg" alt="Country Album Art">
+					<div class="album-info">
+						<h3>Album Title</h3>
+						<p>Artist Name</p>
+					</div>
+				</div>
+				<div class="album-card">
+					<img src="placeholder-country.jpg" alt="Country Album Art">
+					<div class="album-info">
+						<h3>Album Title</h3>
+						<p>Artist Name</p>
+					</div>
+				</div>
+				<div class="album-card">
+					<img src="placeholder-country.jpg" alt="Country Album Art">
+					<div class="album-info">
+						<h3>Album Title</h3>
+						<p>Artist Name</p>
+					</div>
+				</div>
+			
+			</div>
+		</section>
+
+		<section class="genre">
+			<header>
+				<h2>Folk</h2>
+			</header>
+			<div class="albums">
+				<div class="album-card">
+					<img src="placeholder-folk.jpg" alt="Folk Album Art">
+					<div class="album-info">
+						<h3>Album Title</h3>
+						<p>Artist Name</p>
+					</div>
+				</div>
+					<div class="album-card">
+					<img src="placeholder-folk.jpg" alt="Folk Album Art">
+					<div class="album-info">
+						<h3>Album Title</h3>
+						<p>Artist Name</p>
+					</div>
+				</div>
+					<div class="album-card">
+					<img src="placeholder-folk.jpg" alt="Folk Album Art">
+					<div class="album-info">
+						<h3>Album Title</h3>
+						<p>Artist Name</p>
+					</div>
+				</div>
+					<div class="album-card">
+					<img src="placeholder-folk.jpg" alt="Folk Album Art">
+					<div class="album-info">
+						<h3>Album Title</h3>
+						<p>Artist Name</p>
+					</div>
+				</div>
+					<div class="album-card">
+					<img src="placeholder-folk.jpg" alt="Folk Album Art">
+					<div class="album-info">
+						<h3>Album Title</h3>
+						<p>Artist Name</p>
+					</div>
+				</div>
+					<div class="album-card">
+					<img src="placeholder-folk.jpg" alt="Folk Album Art">
+					<div class="album-info">
+						<h3>Album Title</h3>
+						<p>Artist Name</p>
+					</div>
+				</div>
+					<div class="album-card">
+					<img src="placeholder-folk.jpg" alt="Folk Album Art">
+					<div class="album-info">
+						<h3>Album Title</h3>
+						<p>Artist Name</p>
+					</div>
+				</div>
+					<div class="album-card">
+					<img src="placeholder-folk.jpg" alt="Folk Album Art">
+					<div class="album-info">
+						<h3>Album Title</h3>
+						<p>Artist Name</p>
+					</div>
+				</div>
+					<div class="album-card">
+					<img src="placeholder-folk.jpg" alt="Folk Album Art">
+					<div class="album-info">
+						<h3>Album Title</h3>
+						<p>Artist Name</p>
+					</div>
+				</div>
+					<div class="album-card">
+					<img src="placeholder-folk.jpg" alt="Folk Album Art">
+					<div class="album-info">
+						<h3>Album Title</h3>
+						<p>Artist Name</p>
+					</div>
+				</div>
+					<div class="album-card">
+					<img src="placeholder-folk.jpg" alt="Folk Album Art">
+					<div class="album-info">
+						<h3>Album Title</h3>
+						<p>Artist Name</p>
+					</div>
+				</div>
+					<div class="album-card">
+					<img src="placeholder-folk.jpg" alt="Folk Album Art">
+					<div class="album-info">
+						<h3>Album Title</h3>
+						<p>Artist Name</p>
+					</div>
+				</div>
+					<div class="album-card">
+					<img src="placeholder-folk.jpg" alt="Folk Album Art">
+					<div class="album-info">
+						<h3>Album Title</h3>
+						<p>Artist Name</p>
+					</div>
+				</div>
+					<div class="album-card">
+					<img src="placeholder-folk.jpg" alt="Folk Album Art">
+					<div class="album-info">
+						<h3>Album Title</h3>
+						<p>Artist Name</p>
+					</div>
+				</div>
+				
+			</div>
+		</section>
+	</div>
+
+</body>
+<footer>
+	<p>footer here</p>
+</footer>
+</html>
