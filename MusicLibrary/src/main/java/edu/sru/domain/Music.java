@@ -23,9 +23,10 @@ public class Music {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	
-	private Integer Rating;
+	private Integer rating;
 	private String songName;
 	private String dateAdded;
+	private Byte[] image;
 	
 	@ManyToMany(mappedBy="musicName")
 	private Set<Mood> moods = new HashSet<>();
@@ -41,13 +42,14 @@ public class Music {
 	
 	@ManyToOne
 	private Album album;
+	
 
 	public Integer getRating() {
-		return Rating;
+		return rating;
 	}
 
 	public void setRating(Integer rating) {
-		Rating = rating;
+		rating = rating;
 	}
 
 	public String getSongName() {
@@ -72,6 +74,14 @@ public class Music {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public Byte[] getImage() {
+		return image;
+	}
+
+	public void setImage(Byte[] image) {
+		this.image = image;
 	}
 	
 	
