@@ -22,6 +22,7 @@ public class Album {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
+	private Byte[] image;
 	
 	@OneToMany(cascade=CascadeType.ALL, mappedBy="album")
 	private Set<Music> allMusic;
@@ -35,5 +36,13 @@ public class Album {
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public Byte[] getImage() {
+		return image;
+	}
+
+	public void setImage(Byte[] image) {
+		this.image = image;
 	}
 }
