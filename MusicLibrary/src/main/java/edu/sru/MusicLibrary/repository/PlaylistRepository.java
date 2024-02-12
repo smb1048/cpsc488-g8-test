@@ -4,6 +4,6 @@ import org.springframework.data.repository.CrudRepository;
 
 import edu.sru.MusicLibrary.domain.Playlist;
 
-public interface PlaylistRepository extends CrudRepository <Playlist, Long>{
+public interface PlaylistRepository extends CrudRepository<Playlist, Long> {
 
 }
