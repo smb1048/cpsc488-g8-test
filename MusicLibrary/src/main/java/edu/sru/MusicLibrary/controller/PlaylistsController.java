@@ -8,7 +8,9 @@ import edu.sru.MusicLibrary.repository.PlaylistRepository;
 
 @Controller
 public class PlaylistsController {
-	
+	public PlaylistsController() {
+        // Default constructor
+    	}
 	private PlaylistRepository playlistRepository;
 
 	public PlaylistsController(PlaylistRepository playlistRepository) {
