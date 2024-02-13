@@ -12,20 +12,29 @@ import jakarta.persistence.OneToMany;
 @Entity
 public class Artist {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
-
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "artist")
+	private String artistName;
+	
+	@OneToMany(cascade=CascadeType.ALL, mappedBy="artist")
 	private Set<Music> allMusic;
-
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "artist")
+	
+	@OneToMany(cascade=CascadeType.ALL, mappedBy="artist")
 	private Set<Album> albums;
-
+	
 	public Long getId() {
 		return id;
 	}
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public String getArtistName() {
+		return artistName;
+	}
+
+	public void setArtistName(String artistName) {
+		this.artistName = artistName;
 	}
 }
