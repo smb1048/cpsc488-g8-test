@@ -17,13 +17,13 @@ public class Mood {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	private String moodName;
-	
+
 	@ManyToMany
 	@JoinTable(name="mood_category",
 		joinColumns=@JoinColumn(name="mood_id"),
 		inverseJoinColumns=@JoinColumn(name="music_id"))
 	private Set<Music> musicName = new HashSet<>();
-	
+
 	public Long getId() {
 		return id;
 	}

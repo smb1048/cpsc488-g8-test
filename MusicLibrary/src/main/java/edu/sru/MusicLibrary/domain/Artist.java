@@ -15,13 +15,13 @@ public class Artist {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	private String artistName;
-	
+
 	@OneToMany(cascade=CascadeType.ALL, mappedBy="artist")
 	private Set<Music> allMusic;
-	
+
 	@OneToMany(cascade=CascadeType.ALL, mappedBy="artist")
 	private Set<Album> albums;
-	
+
 	public Long getId() {
 		return id;
 	}

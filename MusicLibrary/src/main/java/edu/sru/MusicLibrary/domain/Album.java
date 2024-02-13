@@ -17,13 +17,13 @@ public class Album {
 	private Long id;
 	private String albumName;
 	private byte[] image;
-	
+
 	@OneToMany(cascade=CascadeType.ALL, mappedBy="album")
 	private Set<Music> allMusic;
-	
+
 	@ManyToOne
 	private Artist artist;
-	
+
 	public Long getId() {
 		return id;
 	}

@@ -8,13 +8,13 @@ import edu.sru.MusicLibrary.repository.PlaylistRepository;
 
 @Controller
 public class PlaylistsController {
-	
+
 	private PlaylistRepository playlistRepository;
 
 	public PlaylistsController(PlaylistRepository playlistRepository) {
 		this.playlistRepository = playlistRepository;
 	}
-    
+
     //Mapping for the /index URL when initiated through Tomcat
     @RequestMapping({"/playlists"})
     public String showPlaylistList(Model model) {
