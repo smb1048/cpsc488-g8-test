@@ -13,16 +13,17 @@ import jakarta.persistence.OneToMany;
 @Entity
 public class Album {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
+	private String albumName;
 	private byte[] image;
-
-	@OneToMany(cascade = CascadeType.ALL, mappedBy = "album")
+	
+	@OneToMany(cascade=CascadeType.ALL, mappedBy="album")
 	private Set<Music> allMusic;
-
+	
 	@ManyToOne
 	private Artist artist;
-
+	
 	public Long getId() {
 		return id;
 	}
@@ -37,5 +38,13 @@ public class Album {
 
 	public void setImage(byte[] image) {
 		this.image = image;
+	}
+
+	public String getAlbumName() {
+		return albumName;
+	}
+
+	public void setAlbumName(String albumName) {
+		this.albumName = albumName;
 	}
 }
