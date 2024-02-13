@@ -14,18 +14,29 @@ import jakarta.persistence.ManyToMany;
 @Entity
 public class Genre {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
-
+	private String genreName;
+	
 	@ManyToMany
-	@JoinTable(name = "genre_category", joinColumns = @JoinColumn(name = "genre_id"), inverseJoinColumns = @JoinColumn(name = "music_id"))
+	@JoinTable(name="genre_category",
+		joinColumns=@JoinColumn(name="genre_id"),
+		inverseJoinColumns=@JoinColumn(name="music_id"))
 	private Set<Music> musicName = new HashSet<>();
-
+	
 	public Long getId() {
 		return id;
 	}
 
 	public void setId(Long id) {
 		this.id = id;
+	}
+
+	public String getGenreName() {
+		return genreName;
+	}
+
+	public void setGenreName(String genreName) {
+		this.genreName = genreName;
 	}
 }
