@@ -171,9 +171,9 @@ button:hover {
 }
 
 .album-art img {
-	width: 100%; 
+	width: 100%;
 	height: auto;
-	aspect-ratio: 1/1; 
+	aspect-ratio: 1/1;
 	object-fit: cover;
 }
 
@@ -200,7 +200,7 @@ button:hover {
 
 @media ( max-width : 480px) {
 	.album-card {
-		width: calc(100% - 20px); 
+		width: calc(100% - 20px);
 	}
 }
 </style>
@@ -236,35 +236,35 @@ button:hover {
 						<p>Artist Name</p>
 					</div>
 				</div>
-					<div class="album-card">
+				<div class="album-card">
 					<img src="placeholder-rock.jpg" alt="Rock Album Art">
 					<div class="album-info">
 						<h3>Album Title</h3>
 						<p>Artist Name</p>
 					</div>
 				</div>
-					<div class="album-card">
+				<div class="album-card">
 					<img src="placeholder-rock.jpg" alt="Rock Album Art">
 					<div class="album-info">
 						<h3>Album Title</h3>
 						<p>Artist Name</p>
 					</div>
 				</div>
-					<div class="album-card">
+				<div class="album-card">
 					<img src="placeholder-rock.jpg" alt="Rock Album Art">
 					<div class="album-info">
 						<h3>Album Title</h3>
 						<p>Artist Name</p>
 					</div>
 				</div>
-					<div class="album-card">
+				<div class="album-card">
 					<img src="placeholder-rock.jpg" alt="Rock Album Art">
 					<div class="album-info">
 						<h3>Album Title</h3>
 						<p>Artist Name</p>
 					</div>
-				
-			</div>
+
+				</div>
 		</section>
 
 		<section class="genre">
@@ -272,43 +272,19 @@ button:hover {
 				<h2>Rap</h2>
 			</header>
 			<div class="albums">
-				<div class="album-card">
-					<img src="placeholder-rap.jpg" alt="Rap Album Art">
+				<div th:each="album : ${albums}" class="album-card">
+					<img th:src="@{'/images/' + album.id}" alt="Album Art"
+						onerror="this.onerror=null;this.src='placeholder-rap.jpg';">
 					<div class="album-info">
-						<h3>Album Title</h3>
-						<p>Artist Name</p>
+						<h3 th:text="${album.albumName}">Album Title</h3>
+						<p th:text="${album.artist.name}">Artist Name</p>
 					</div>
 				</div>
-					<div class="album-card">
-					<img src="placeholder-rap.jpg" alt="Rap Album Art">
-					<div class="album-info">
-						<h3>Album Title</h3>
-						<p>Artist Name</p>
-					</div>
-				</div>
-					<div class="album-card">
-					<img src="placeholder-rap.jpg" alt="Rap Album Art">
-					<div class="album-info">
-						<h3>Album Title</h3>
-						<p>Artist Name</p>
-					</div>
-				</div>
-					<div class="album-card">
-					<img src="placeholder-rap.jpg" alt="Rap Album Art">
-					<div class="album-info">
-						<h3>Album Title</h3>
-						<p>Artist Name</p>
-					</div>
-				</div>
-					<div class="album-card">
-					<img src="placeholder-rap.jpg" alt="Rap Album Art">
-					<div class="album-info">
-						<h3>Album Title</h3>
-						<p>Artist Name</p>
-					</div>
-				</div>
-			
 			</div>
+			<div>
+			This is setup to pull from the database, it is just empty as of now. The rest are manually inputted to show how the albums will look once populated
+			</div>
+
 		</section>
 
 		<section class="genre">
@@ -323,42 +299,42 @@ button:hover {
 						<p>Artist Name</p>
 					</div>
 				</div>
-					<div class="album-card">
+				<div class="album-card">
 					<img src="placeholder-rnb.jpg" alt="R&B Album Art">
 					<div class="album-info">
 						<h3>Album Title</h3>
 						<p>Artist Name</p>
 					</div>
 				</div>
-					<div class="album-card">
+				<div class="album-card">
 					<img src="placeholder-rnb.jpg" alt="R&B Album Art">
 					<div class="album-info">
 						<h3>Album Title</h3>
 						<p>Artist Name</p>
 					</div>
 				</div>
-					<div class="album-card">
+				<div class="album-card">
 					<img src="placeholder-rnb.jpg" alt="R&B Album Art">
 					<div class="album-info">
 						<h3>Album Title</h3>
 						<p>Artist Name</p>
 					</div>
 				</div>
-					<div class="album-card">
+				<div class="album-card">
 					<img src="placeholder-rnb.jpg" alt="R&B Album Art">
 					<div class="album-info">
 						<h3>Album Title</h3>
 						<p>Artist Name</p>
 					</div>
 				</div>
-					<div class="album-card">
+				<div class="album-card">
 					<img src="placeholder-rnb.jpg" alt="R&B Album Art">
 					<div class="album-info">
 						<h3>Album Title</h3>
 						<p>Artist Name</p>
 					</div>
 				</div>
-			
+
 			</div>
 		</section>
 
@@ -402,7 +378,7 @@ button:hover {
 						<p>Artist Name</p>
 					</div>
 				</div>
-			
+
 			</div>
 		</section>
 
@@ -418,98 +394,98 @@ button:hover {
 						<p>Artist Name</p>
 					</div>
 				</div>
-					<div class="album-card">
+				<div class="album-card">
 					<img src="placeholder-folk.jpg" alt="Folk Album Art">
 					<div class="album-info">
 						<h3>Album Title</h3>
 						<p>Artist Name</p>
 					</div>
 				</div>
-					<div class="album-card">
+				<div class="album-card">
 					<img src="placeholder-folk.jpg" alt="Folk Album Art">
 					<div class="album-info">
 						<h3>Album Title</h3>
 						<p>Artist Name</p>
 					</div>
 				</div>
-					<div class="album-card">
+				<div class="album-card">
 					<img src="placeholder-folk.jpg" alt="Folk Album Art">
 					<div class="album-info">
 						<h3>Album Title</h3>
 						<p>Artist Name</p>
 					</div>
 				</div>
-					<div class="album-card">
+				<div class="album-card">
 					<img src="placeholder-folk.jpg" alt="Folk Album Art">
 					<div class="album-info">
 						<h3>Album Title</h3>
 						<p>Artist Name</p>
 					</div>
 				</div>
-					<div class="album-card">
+				<div class="album-card">
 					<img src="placeholder-folk.jpg" alt="Folk Album Art">
 					<div class="album-info">
 						<h3>Album Title</h3>
 						<p>Artist Name</p>
 					</div>
 				</div>
-					<div class="album-card">
+				<div class="album-card">
 					<img src="placeholder-folk.jpg" alt="Folk Album Art">
 					<div class="album-info">
 						<h3>Album Title</h3>
 						<p>Artist Name</p>
 					</div>
 				</div>
-					<div class="album-card">
+				<div class="album-card">
 					<img src="placeholder-folk.jpg" alt="Folk Album Art">
 					<div class="album-info">
 						<h3>Album Title</h3>
 						<p>Artist Name</p>
 					</div>
 				</div>
-					<div class="album-card">
+				<div class="album-card">
 					<img src="placeholder-folk.jpg" alt="Folk Album Art">
 					<div class="album-info">
 						<h3>Album Title</h3>
 						<p>Artist Name</p>
 					</div>
 				</div>
-					<div class="album-card">
+				<div class="album-card">
 					<img src="placeholder-folk.jpg" alt="Folk Album Art">
 					<div class="album-info">
 						<h3>Album Title</h3>
 						<p>Artist Name</p>
 					</div>
 				</div>
-					<div class="album-card">
+				<div class="album-card">
 					<img src="placeholder-folk.jpg" alt="Folk Album Art">
 					<div class="album-info">
 						<h3>Album Title</h3>
 						<p>Artist Name</p>
 					</div>
 				</div>
-					<div class="album-card">
+				<div class="album-card">
 					<img src="placeholder-folk.jpg" alt="Folk Album Art">
 					<div class="album-info">
 						<h3>Album Title</h3>
 						<p>Artist Name</p>
 					</div>
 				</div>
-					<div class="album-card">
+				<div class="album-card">
 					<img src="placeholder-folk.jpg" alt="Folk Album Art">
 					<div class="album-info">
 						<h3>Album Title</h3>
 						<p>Artist Name</p>
 					</div>
 				</div>
-					<div class="album-card">
+				<div class="album-card">
 					<img src="placeholder-folk.jpg" alt="Folk Album Art">
 					<div class="album-info">
 						<h3>Album Title</h3>
 						<p>Artist Name</p>
 					</div>
 				</div>
-				
+
 			</div>
 		</section>
 	</div>

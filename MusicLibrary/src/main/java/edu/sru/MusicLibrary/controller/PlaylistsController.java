@@ -16,7 +16,7 @@ public class PlaylistsController {
 	public PlaylistsController(PlaylistRepository playlistRepository) {
 		this.playlistRepository = playlistRepository;
 	}
-    
+
     //Mapping for the /index URL when initiated through Tomcat
     @RequestMapping({"/playlists"})
     public String showPlaylistList(Model model) {
